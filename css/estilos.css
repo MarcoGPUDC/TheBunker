@@ -1,0 +1,131 @@
+  /* --- Colores base --- */
+:root {
+    --verde-oscuro: #2f522e;
+    --verde-claro: #69856d;
+    --gris-azulado: #596972;
+    --verde-agua: #a4b5ae;
+    --gris: #949ba4;
+    --marron-claro: #84857e;
+    --negro: #110d11;
+  }
+  
+  /* --- Reset mínimo y base --- */
+  body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background-color: var(--negro);
+    color: var(--gris);
+  }
+  
+  /* --- Encabezado adaptable --- */
+
+  header {
+    background-color: var(--verde-oscuro);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+  }
+
+  #main-nav ul {
+    margin: 0;
+    padding: 0;
+  }
+  
+  #menu-toggle {
+    display: none;
+    background: none;
+    color: white;
+    font-size: 1.8em;
+    border: none;
+    cursor: pointer;
+    margin-right: 10px;
+  }
+
+  header nav ul {
+    background-color: var(--verde-oscuro);
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    list-style: none;
+    margin: 12px;
+  }
+  
+  nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+  }
+  
+  nav a:hover {
+    color: var(--verde-claro);
+  }
+  
+  /* --- Mobile: barra lateral --- */
+  @media (max-width: 480px) {
+    #menu-toggle {
+      display: block;
+    }
+  
+    #side-menu {
+      position: absolute;
+      top: 35px;
+      left: 0;
+      width: 70%;
+      background-color: var(--verde-claro);
+      transform: translateX(-100%);
+      transition: transform 0.3s ease;
+      z-index: 1000;
+    }
+  
+    #side-menu.show {
+      transform: translateX(0%);
+    }
+  
+    #side-menu ul {
+      flex-direction: column;
+      padding: 10px;
+    }
+  
+    #side-menu ul li {
+      margin: 5px 0;
+      border-bottom: 1px solid var(--verde-claro);
+    }
+  }
+  
+  /* --- Home section --- */
+  #home{
+    padding: 40px;
+    background-color: var(--negro);
+    text-align: center;
+  }
+  
+  #home h1 {
+    color: var(--verde-claro);
+    font-size: 2.5em;
+    margin-bottom: 10px;
+  }
+  
+  #home p {
+    color: var(--verde-oscuro);
+    font-size: 1.2em;
+    margin-bottom: 30px;
+  }
+  
+  /* --- Botones --- */
+  button {
+    background-color: var(--verde-oscuro);
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    margin: 5px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: var(--gris-azulado);
+  }
+  
+  

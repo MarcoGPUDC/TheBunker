@@ -1,0 +1,9 @@
+Gama de colores:
+#2f522e - Verde
+#84857e - MarronClaro
+#a4b5ae - verdeAgua
+#949ba4 - Gris
+#110d11 - Negro
+#596972 - GrisAzulado
+#d14329 - Rojo
+#69856d - VerdeClaro
