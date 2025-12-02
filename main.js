@@ -1,27 +1,5 @@
 import { cargarVista } from './js/router.js';
 
-document.addEventListener('DOMContentLoaded', () => {
-  // Carga inicial
-  const vistaInicial = history.state?.vista || 'home';
-  cargarVista(vistaInicial);
-
-  // Manejo de clicks en nav
-  document.querySelectorAll('[data-link]').forEach(el => {
-    el.addEventListener('click', e => {
-      e.preventDefault();
-      const vista = e.target.dataset.link;
-      history.pushState({ vista }, '', `/${vista}`);
-      cargarVista(vista);
-    });
-  });
-
-  // Botón atrás/adelante
-  window.onpopstate = (event) => {
-    const vista = event.state?.vista || 'home';
-    cargarVista(vista);
-  };
-});
-
 // main.js
 async function cargarCabecera() {
   const res = await fetch('views/header.html');
@@ -30,32 +8,39 @@ async function cargarCabecera() {
   contenedor.innerHTML = html;
   document.body.insertBefore(contenedor, document.body.firstChild);
 }
-// Desplegar menu lateral
-
 
 document.addEventListener('DOMContentLoaded', async () => {
+  // 1. Cargar cabecera
   await cargarCabecera();
+  
+
+  // 2. Toggle menú lateral
   document.getElementById('menu-toggle')?.addEventListener('click', () => {
     document.getElementById('side-menu')?.classList.toggle('show');
   });
-  
-  // Listeners después de que se cargó la cabecera
-  document.querySelectorAll('[data-link]').forEach(el => {
-    el.addEventListener('click', e => {
-      e.preventDefault();
-      const vista = e.target.dataset.link;
-      history.pushState({ vista }, '', `/${vista}`);
-      document.getElementById('side-menu')?.classList.toggle('show');
-      cargarVista(vista);
-    });
+
+  // 3. Manejo SPA (delegación de eventos para los clicks)
+  document.body.addEventListener('click', (e) => {
+    const link = e.target.closest('[data-link]');
+    if (!link) return;
+
+    e.preventDefault();
+    const vista = link.dataset.link;
+
+    history.pushState({ vista }, '', `/${vista}`);
+    document.getElementById('side-menu')?.classList.remove('show');
+    cargarVista(vista);
   });
 
-  // Carga inicial
-  const vistaInicial = history.state?.vista || 'home';
+  // 4. Detectar vista inicial según la URL
+  let vistaInicial = location.pathname.replace('/', '') || 'home';
   cargarVista(vistaInicial);
 
+  // 5. Atrás/adelante del navegador
   window.onpopstate = (event) => {
-    const vista = event.state?.vista || 'home';
+    const vista = event.state?.vista || location.pathname.replace('/', '') || 'home';
     cargarVista(vista);
   };
+  
 });
+

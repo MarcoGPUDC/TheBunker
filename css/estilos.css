@@ -1,12 +1,13 @@
   /* --- Colores base --- */
 :root {
-    --verde-oscuro: #2f522e;
+    --verde-oscuro: #283204;
     --verde-claro: #69856d;
     --gris-azulado: #596972;
     --verde-agua: #a4b5ae;
     --gris: #949ba4;
     --marron-claro: #84857e;
     --negro: #110d11;
+    --gris-oscuro: #2f522e;
   }
   
   /* --- Reset mínimo y base --- */
@@ -27,9 +28,32 @@
     position: relative;
   }
 
-  #main-nav ul {
-    margin: 0;
+  .titulo {
+    font-weight: bold;
+  }
+
+  #side-menu ul {
+    display: inline-block;
+  }
+
+  #logo {
+    display: inline-block;
+    padding: 5px;
+  }
+
+  #side-menu ul li {
+    display: inline;
+    margin: 10px;
     padding: 0;
+    padding-top: 10px;
+  }
+
+  
+
+  #side-menu ul li {
+    margin: 10px;
+    padding: 0;
+    padding-top: 10px;
   }
   
   #menu-toggle {
@@ -49,6 +73,7 @@
     justify-content: center;
     list-style: none;
     margin: 12px;
+    padding-left: 1px;
   }
   
   nav a {
@@ -58,41 +83,87 @@
   }
   
   nav a:hover {
-    color: var(--verde-claro);
+    color: var(--verde-agua);
+  }
+  /* --- Services section --- */
+  .horariosMes {
+    background-image: url('/public/img/horariosOctubre.PNG');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    align-content: end;
+    height: 500px;
+    position: relative;
+  }
+
+  .horariosMes:hover {
+    animation: respirar 1.5s ease-in-out infinite;
+  }
+
+  .oferta {
+    background-image: url('/public/img/findesOpen.PNG');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    align-content: end;
+    height: 500px;
+    position: relative;
+  }
+
+  .oferta:hover {
+    animation: respirar 1.5s ease-in-out infinite;
   }
   
-  /* --- Mobile: barra lateral --- */
-  @media (max-width: 480px) {
-    #menu-toggle {
-      display: block;
-    }
-  
-    #side-menu {
-      position: absolute;
-      top: 35px;
-      left: 0;
-      width: 70%;
-      background-color: var(--verde-claro);
-      transform: translateX(-100%);
-      transition: transform 0.3s ease;
-      z-index: 1000;
-    }
-  
-    #side-menu.show {
-      transform: translateX(0%);
-    }
-  
-    #side-menu ul {
-      flex-direction: column;
-      padding: 10px;
-    }
-  
-    #side-menu ul li {
-      margin: 5px 0;
-      border-bottom: 1px solid var(--verde-claro);
-    }
+  @keyframes respirar {
+    0%   { transform: scale(1); }
+    50%  { transform: scale(1.05); }
+    100% { transform: scale(1); }
   }
-  
+
+  .horariosFuncional {
+    background-image: url('/public/img/funcionalHorarios.PNG');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    align-content: end;
+    height: 390px;
+    position: relative;
+  }
+
+  .horariosCrossfit {
+    background-image: url('/public/img/crossfitHorarios.PNG');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    align-content: end;
+    height: 390px;
+    position: relative;
+  }
+
+  .horariosCalistenia {
+    background-image: url('/public/img/calisteniaHorarios.PNG');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    align-content: end;
+    height: 390px;
+    position: relative;
+  }
+
+  .botonContacto {
+    width: 25%;
+    margin: 0 auto;
+  }
+
+  .background-alter {
+    background-color: var(--verde-oscuro);
+    height: 100%;
+  } 
+
+  .py-3 {
+    padding-bottom: 2.5rem;
+  }
+
   /* --- Home section --- */
   #home{
     padding: 40px;
@@ -125,7 +196,76 @@
   }
   
   button:hover {
-    background-color: var(--gris-azulado);
+    background-color: var(--gis-azulado);
+  }
+
+  .videoInicio {
+    height: 400px;
+  }
+
+  .fotosServicios {
+    left: 45%;
+    position: relative;
+  }
+
+  #fotoGrupal {
+    left: 40%;
+    position: relative;
+  }
+
+  .bg-gris-oscuro{
+    background-color: var(--negro);
   }
   
+   /* --- Mobile: barra lateral --- */
+   @media (max-width: 480px) {
+    #menu-toggle {
+      display: block;
+    }
   
+    #side-menu {
+      position: absolute;
+      top: 35px;
+      left: 0;
+      width: 70%;
+      background-color: var(--verde-claro);
+      transform: translateX(-100%);
+      transition: transform 0.3s ease;
+      z-index: 1000;
+    }
+  
+    #side-menu.show {
+      transform: translateX(0%);
+    }
+  
+    #side-menu ul {
+      flex-direction: column;
+      padding: 10px;
+    }
+  
+    #side-menu ul li {
+      margin: 5px 0;
+      border-bottom: 1px solid var(--verde-claro);
+    }
+
+    #logo {
+      float: right;
+    }
+
+    #fotoGrupal {
+      left: 30%;
+      position: relative;
+      width: 200px;
+      height: auto;
+    }
+
+    #botonContactoFuncional {
+      left: 40%;
+      position: relative;
+    }
+  
+    #botonContactoCrossfit {
+      left: 40%;
+      position: relative;
+    }
+  }
