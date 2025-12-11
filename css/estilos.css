@@ -236,6 +236,23 @@
 
    /* --- Mobile: barra lateral --- */
    @media (max-width: 480px) {
+    main * {
+      max-width: 100%;
+    }
+
+    .fotosServicios {
+      width: 50%;
+      height: fit-content;
+    }
+
+    .servicioInfo p {
+      font-size: 8px;
+    }
+
+    .servicioInfo h2 {
+      font-size: smaller;
+    }
+
     #menu-toggle {
       display: block;
     }
@@ -332,6 +349,11 @@
       font-size: large;
       font-weight: bold;
     }
+
+    .videoInicio {
+      height: 180px;
+    }
+
   }
 
   #whatsapp {

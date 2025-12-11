@@ -10,7 +10,7 @@ export async function cargarVista(nombreVista) {
     const video = document.getElementById('videoPresentacion');
     video.addEventListener('click', function() {
       console.log('clicking a video')
-      window.open('https://maps.app.goo.gl/mmXMTgcaCohwSJJM6', '_blank');
+      window.open('https://maps.app.goo.gl/mmXMTgcaCohwSJJM6', '_newblank');
     });
     }
 
