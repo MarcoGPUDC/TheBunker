@@ -216,7 +216,24 @@
   .bg-gris-oscuro{
     background-color: var(--negro);
   }
+
+  .sitio-construccion {
+    margin-left: 30%;
+    margin-top: 5%;
+  }
+
+  .sitio-construccion p {
+    margin-left: 7%;
+    font-size: xx-large;
+    font-weight: bold;
+  }
+
+  .imagen-construccion {
+    height: 512px;
+  }
   
+   
+
    /* --- Mobile: barra lateral --- */
    @media (max-width: 480px) {
     #menu-toggle {
@@ -225,9 +242,42 @@
   
     #side-menu {
       position: absolute;
-      top: 35px;
+      top: 45px;
       left: 0;
       width: 70%;
+      background-color: var(--verde-claro);
+      transform: translateX(-100%);
+      transition: transform 0.3s ease;
+      z-index: 1000;
+    }
+  
+    #side-menu.show {
+      transform: translateX(0%);
+    }
+  
+    /* 🔥 CORRECCIÓN IMPORTANTE */
+    #side-menu ul {
+      display: flex;              
+      flex-direction: column;     /* ← vertical */
+      width: 90%;                
+      padding: 10px;
+    }
+  
+    #side-menu ul li {
+      margin: 5px 0;
+      width: 90%;                /* ← que ocupen todo el ancho */
+      border-bottom: 1px solid var(--verde-claro);
+    }
+   
+    #menu-toggle {
+      display: flex;
+    }
+  
+    #side-menu {
+      position: absolute;
+      top: 45px;
+      left: 0;
+      width: 50%;
       background-color: var(--verde-claro);
       transform: translateX(-100%);
       transition: transform 0.3s ease;
@@ -268,4 +318,24 @@
       left: 40%;
       position: relative;
     }
+
+    .sitio-construccion {
+      margin-left: 23%;
+      margin-top: 5%;
+    }
+    .imagen-construccion {
+      height: 255px;
+    }
+
+    .sitio-construccion p {
+      margin-left: 4%;
+      font-size: large;
+      font-weight: bold;
+    }
+  }
+
+  #whatsapp {
+    position: fixed;
+    bottom: 30px;
+    right:30px;
   }
