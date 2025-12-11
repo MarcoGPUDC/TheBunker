@@ -8,8 +8,11 @@ export async function cargarVista(nombreVista) {
 
     if (nombreVista === 'home') {
     const video = document.getElementById('videoPresentacion');
-    video.addEventListener('click', function() {
-      console.log('clicking a video')
+    if (window.matchMedia("(max-width: 480px)").matches) {
+      video.setAttribute("muted", "");
+      video.play();
+    }    
+    video.addEventListener('click', function() {  
       window.open('https://maps.app.goo.gl/mmXMTgcaCohwSJJM6', '_newblank');
     });
     }
