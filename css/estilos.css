@@ -367,31 +367,31 @@
     margin-top: 2%;
   }
 
-  #tabla-horarios {
+  .tabla-horarios {
     margin: auto auto;
   }
-  #tabla-horarios thead th {
+  .tabla-horarios thead th {
     background-color: var(--gris-oscuro);
     color: #ffffff;
     text-align: center;
   }
   
-  #tabla-horarios tbody tr:nth-child(even) {
+  .tabla-horarios tbody tr:nth-child(even) {
     background-color: var(--verde-claro);
     color: #000;
   }
   
-  #tabla-horarios tbody tr:nth-child(odd) {
+  .tabla-horarios tbody tr:nth-child(odd) {
     background-color: var(--verde-agua);
     color: #000;
   }
   
-  #tabla-horarios td,
-  #tabla-horarios th {
+  .tabla-horarios td,
+  .tabla-horarios th {
     padding: 0.75rem;
   }
   
-  #tabla-horarios tbody tr:hover {
+  .tabla-horarios tbody tr:hover {
     background-color: var(--gris-azulado);
   }
   
