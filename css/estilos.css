@@ -166,6 +166,10 @@
 
   /* --- Home section --- */
   #home{
+    /*background-image: linear-gradient(var(--gris-oscuro), rgba(132, 152, 136, 0.538)), url('/public/img/logo_bunker.png');*/
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
     padding: 40px;
     background-color: var(--negro);
     text-align: center;

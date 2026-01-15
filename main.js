@@ -1,5 +1,5 @@
 import { cargarVista } from './js/router.js';
-
+import {cargarHorarios} from './js/horarios.js';
 // main.js
 async function cargarCabecera() {
   const res = await fetch('views/header.html');
@@ -30,6 +30,13 @@ document.addEventListener('DOMContentLoaded', async () => {
     history.pushState({ vista }, '', `/${vista}`);
     document.getElementById('side-menu')?.classList.remove('show');
     cargarVista(vista);
+    if (vista === 'contacto') {
+      cargarHorarios("calistenia");
+      //cargarHorarios("funcional-chicas");
+      //cargarHorarios("funcional-mayores");
+      cargarHorarios("jiu-jitzu");
+      //cargarHorarios("danzas-arabes");
+    }
   });
 
   // 4. Detectar vista inicial según la URL

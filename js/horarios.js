@@ -1,4 +1,4 @@
-async function cargarHorarios(actividad) {
+export async function cargarHorarios(actividad) {
     var pag;
     if(actividad=="calistenia"){
         pag="0";
@@ -34,10 +34,10 @@ async function cargarHorarios(actividad) {
         '<tr>' + fila.map(c => `<td class="text-center">${c}</td>`).join('') + '</tr>'
     ).join('');
     }
-      
-cargarHorarios("calistenia");
-//cargarHorarios("funcional-chicas");
-//cargarHorarios("funcional-mayores");
-//cargarHorarios("jiu-jitzu");
-//cargarHorarios("danzas-arabes");
+    cargarHorarios("calistenia");
+    //cargarHorarios("funcional-chicas");
+    //cargarHorarios("funcional-mayores");
+    cargarHorarios("jiu-jitzu");
+    //cargarHorarios("danzas-arabes");
+    
       
